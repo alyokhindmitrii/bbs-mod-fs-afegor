@@ -10,6 +10,7 @@ import mchorse.bbs_mod.settings.values.numeric.ValueInt;
 import mchorse.bbs_mod.settings.values.ui.ValueColors;
 import mchorse.bbs_mod.settings.values.ui.ValueEditorLayout;
 import mchorse.bbs_mod.settings.values.ui.ValueLanguage;
+import mchorse.bbs_mod.settings.values.ui.ValueMotionPath;
 import mchorse.bbs_mod.settings.values.ui.ValueOnionSkin;
 import mchorse.bbs_mod.settings.values.ui.ValueStringKeys;
 import mchorse.bbs_mod.settings.values.ui.ValueVideoSettings;
@@ -37,6 +38,7 @@ public class BBSSettings
     public static ValueBoolean uniformScale;
     public static ValueBoolean clickSound;
     public static ValueBoolean gizmos;
+    public static ValueFloat cameraEditorExportBandsOpacity;
 
     public static ValueBoolean enableCursorRendering;
     public static ValueBoolean enableMouseButtonRendering;
@@ -78,6 +80,7 @@ public class BBSSettings
     public static ValueBoolean editorHorizontalFlight;
     public static ValueEditorLayout editorLayoutSettings;
     public static ValueOnionSkin editorOnionSkin;
+    public static ValueMotionPath editorMotionPath;
     public static ValueBoolean editorSnapToMarkers;
     public static ValueBoolean editorClipPreview;
     public static ValueBoolean editorRewind;
@@ -235,6 +238,7 @@ public class BBSSettings
         editorHorizontalFlight = builder.getBoolean("horizontal_flight", false);
         builder.register(editorLayoutSettings = new ValueEditorLayout("layout"));
         builder.register(editorOnionSkin = new ValueOnionSkin("onion_skin"));
+        builder.register(editorMotionPath = new ValueMotionPath("motion_path"));
         editorSnapToMarkers = builder.getBoolean("snap_to_markers", false);
         editorClipPreview = builder.getBoolean("clip_preview", true);
         editorRewind = builder.getBoolean("rewind", true);

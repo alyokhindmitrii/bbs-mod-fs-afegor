@@ -234,6 +234,14 @@ public class UIKeys
     public static final IKey FILM_CONTROLLER_ONION_SKIN_NEXT = L10n.lang("bbs.ui.film.controller.onion_skin.next");
     public static final IKey FILM_CONTROLLER_ONION_SKIN_PREV = L10n.lang("bbs.ui.film.controller.onion_skin.prev");
     public static final IKey FILM_CONTROLLER_ONION_SKIN_TITLE = L10n.lang("bbs.ui.film.controller.onion_skin.title");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_TITLE = L10n.lang("bbs.ui.film.controller.motion_path.title");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_MODE = L10n.lang("bbs.ui.film.controller.motion_path.mode");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_BONES = L10n.lang("bbs.ui.film.controller.motion_path.bones");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_PRE_TICKS = L10n.lang("bbs.ui.film.controller.motion_path.pre_ticks");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_POST_TICKS = L10n.lang("bbs.ui.film.controller.motion_path.post_ticks");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_QUALITY = L10n.lang("bbs.ui.film.controller.motion_path.quality");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_LINE_WIDTH = L10n.lang("bbs.ui.film.controller.motion_path.line_width");
+    public static final IKey FILM_CONTROLLER_MOTION_PATH_KEYFRAME_SIZE = L10n.lang("bbs.ui.film.controller.motion_path.keyframe_size");
     public static final IKey FILM_CONTROLLER_RECORD_DESCRIPTION = L10n.lang("bbs.ui.film.controller.record-description");
     public static final IKey FILM_CONTROLLER_RECORD_TITLE = L10n.lang("bbs.ui.film.controller.record-title");
     public static final IKey FILM_CONTROLLER_SERVER_WARNING = L10n.lang("bbs.ui.film.controller.server_warning");

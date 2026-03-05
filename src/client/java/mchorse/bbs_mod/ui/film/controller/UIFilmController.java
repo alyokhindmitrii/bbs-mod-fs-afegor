@@ -29,6 +29,7 @@ import mchorse.bbs_mod.morphing.Morph;
 import mchorse.bbs_mod.network.ClientNetwork;
 import mchorse.bbs_mod.resources.Link;
 import mchorse.bbs_mod.settings.values.base.BaseValue;
+import mchorse.bbs_mod.settings.values.ui.ValueMotionPath;
 import mchorse.bbs_mod.settings.values.ui.ValueOnionSkin;
 import mchorse.bbs_mod.ui.Keys;
 import mchorse.bbs_mod.ui.UIKeys;
@@ -124,6 +125,9 @@ public class UIFilmController extends UIElement
     public final OrbitFilmCameraController orbit = new OrbitFilmCameraController(this);
     private int pov;
     private boolean paused;
+
+    private boolean lastOnionEnabled = true;
+    private boolean lastMotionEnabled = false;
 
     private WorldRenderContext worldRenderContext;
 
@@ -234,6 +238,11 @@ public class UIFilmController extends UIElement
     public ValueOnionSkin getOnionSkin()
     {
         return BBSSettings.editorOnionSkin;
+    }
+
+    public ValueMotionPath getMotionPath()
+    {
+        return BBSSettings.editorMotionPath;
     }
 
     private int getTick()
