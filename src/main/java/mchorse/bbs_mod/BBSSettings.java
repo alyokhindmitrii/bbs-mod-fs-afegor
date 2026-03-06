@@ -84,6 +84,7 @@ public class BBSSettings
     public static ValueBoolean editorSnapToMarkers;
     public static ValueBoolean editorClipPreview;
     public static ValueBoolean editorRewind;
+    public static ValueBoolean editorSwapBoneMouseButtons;
     public static ValueBoolean editorHorizontalClipEditor;
     public static ValueBoolean editorMinutesBackup;
     public static ValueInt editorTrackWidth;
@@ -242,6 +243,7 @@ public class BBSSettings
         editorSnapToMarkers = builder.getBoolean("snap_to_markers", false);
         editorClipPreview = builder.getBoolean("clip_preview", true);
         editorRewind = builder.getBoolean("rewind", true);
+        editorSwapBoneMouseButtons = builder.getBoolean("swap_bone_mouse_buttons", false);
         editorHorizontalClipEditor = builder.getBoolean("horizontal_clip_editor", true);
         editorMinutesBackup = builder.getBoolean("minutes_backup", true);
         editorPreviewAutoSize = builder.getBoolean("preview_auto_size", true);

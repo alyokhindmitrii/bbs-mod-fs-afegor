@@ -283,7 +283,21 @@ public class UIFilmPreview extends UIElement
 
         if (area.isInside(context))
         {
-            return this.panel.replayEditor.clickViewport(context, area);
+            int mouseButton = context.mouseButton;
+            boolean swapBoneButtons = BBSSettings.editorSwapBoneMouseButtons.get();
+            boolean hasPicked = this.panel.getController().getStencil().hasPicked();
+            boolean swap = swapBoneButtons && hasPicked && mouseButton < 2;
+
+            if (swap)
+            {
+                context.mouseButton = mouseButton == 0 ? 1 : 0;
+            }
+
+            boolean handled = this.panel.replayEditor.clickViewport(context, area);
+
+            context.mouseButton = mouseButton;
+
+            return handled;
         }
 
         return super.subMouseClicked(context);
