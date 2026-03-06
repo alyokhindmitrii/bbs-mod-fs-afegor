@@ -368,6 +368,16 @@ public class UIReplaysEditor extends UIElement
                 value = sheet.channel.getFactory().createEmpty();
             }
 
+            if (value == null)
+            {
+                value = sheet.channel.getFactory().createEmpty();
+            }
+
+            if (value == null)
+            {
+                continue;
+            }
+
             int index = sheet.channel.insert(tick, value);
 
             if (extra != null)
