@@ -62,7 +62,9 @@ import mchorse.bbs_mod.utils.StringUtils;
 import mchorse.bbs_mod.utils.clips.Clip;
 import mchorse.bbs_mod.utils.clips.Clips;
 import mchorse.bbs_mod.utils.colors.Colors;
+import mchorse.bbs_mod.utils.keyframes.Keyframe;
 import mchorse.bbs_mod.utils.keyframes.KeyframeChannel;
+import mchorse.bbs_mod.utils.keyframes.KeyframeSegment;
 import mchorse.bbs_mod.utils.keyframes.factories.KeyframeFactories;
 import mchorse.bbs_mod.utils.pose.PoseTransform;
 import net.minecraft.client.MinecraftClient;
@@ -321,6 +323,58 @@ public class UIReplaysEditor extends UIElement
     {
         this.category = c;
         this.updateChannelsList();
+    }
+
+    public boolean isPoseCategory()
+    {
+        return this.category == ReplayCategory.POSE;
+    }
+
+    public boolean isModelCategory()
+    {
+        return this.category == ReplayCategory.MODEL;
+    }
+
+    @SuppressWarnings("unchecked")
+    public void insertPerLimbFrame(int tick)
+    {
+        if (!this.isPoseCategory() || this.keyframeEditor == null)
+        {
+            return;
+        }
+
+        for (UIKeyframeSheet sheet : this.keyframeEditor.view.getGraph().getSheets())
+        {
+            if (!sheet.isBoneTrack)
+            {
+                continue;
+            }
+
+            KeyframeSegment segment = sheet.channel.find(tick);
+            Keyframe extra = null;
+            Object value;
+
+            if (segment != null)
+            {
+                value = segment.createInterpolated();
+                extra = segment.a;
+            }
+            else if (sheet.property != null)
+            {
+                value = sheet.channel.getFactory().copy(sheet.property.get());
+            }
+            else
+            {
+                value = sheet.channel.getFactory().createEmpty();
+            }
+
+            int index = sheet.channel.insert(tick, value);
+
+            if (extra != null)
+            {
+                sheet.channel.get(index).copyOverExtra(extra);
+            }
+        }
     }
 
     public void setFilm(Film film)

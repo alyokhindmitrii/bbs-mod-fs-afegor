@@ -857,6 +857,18 @@ public class UIFilmController extends UIElement
             return;
         }
 
+        if (this.panel.replayEditor.isModelCategory())
+        {
+            return;
+        }
+
+        if (this.panel.replayEditor.isPoseCategory())
+        {
+            this.panel.replayEditor.insertPerLimbFrame(this.getTick());
+
+            return;
+        }
+
         if (Window.isCtrlPressed())
         {
             this.toggleMousePointer(false);
