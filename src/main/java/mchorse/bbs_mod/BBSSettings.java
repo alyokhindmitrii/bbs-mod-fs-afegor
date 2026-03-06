@@ -10,6 +10,7 @@ import mchorse.bbs_mod.settings.values.numeric.ValueInt;
 import mchorse.bbs_mod.settings.values.ui.ValueColors;
 import mchorse.bbs_mod.settings.values.ui.ValueEditorLayout;
 import mchorse.bbs_mod.settings.values.ui.ValueLanguage;
+import mchorse.bbs_mod.settings.values.ui.ValueMotionPath;
 import mchorse.bbs_mod.settings.values.ui.ValueOnionSkin;
 import mchorse.bbs_mod.settings.values.ui.ValueStringKeys;
 import mchorse.bbs_mod.settings.values.ui.ValueVideoSettings;
@@ -33,9 +34,11 @@ public class BBSSettings
     public static ValueBoolean forceQwerty;
     public static ValueBoolean freezeModels;
     public static ValueFloat axesScale;
+    public static ValueFloat axesThickness;
     public static ValueBoolean uniformScale;
     public static ValueBoolean clickSound;
     public static ValueBoolean gizmos;
+    public static ValueFloat cameraEditorExportBandsOpacity;
 
     public static ValueBoolean enableCursorRendering;
     public static ValueBoolean enableMouseButtonRendering;
@@ -77,9 +80,11 @@ public class BBSSettings
     public static ValueBoolean editorHorizontalFlight;
     public static ValueEditorLayout editorLayoutSettings;
     public static ValueOnionSkin editorOnionSkin;
+    public static ValueMotionPath editorMotionPath;
     public static ValueBoolean editorSnapToMarkers;
     public static ValueBoolean editorClipPreview;
     public static ValueBoolean editorRewind;
+    public static ValueBoolean editorSwapBoneMouseButtons;
     public static ValueBoolean editorHorizontalClipEditor;
     public static ValueBoolean editorMinutesBackup;
     public static ValueInt editorTrackWidth;
@@ -175,6 +180,7 @@ public class BBSSettings
         forceQwerty = builder.getBoolean("force_qwerty", false);
         freezeModels = builder.getBoolean("freeze_models", false);
         axesScale = builder.getFloat("axes_scale", 1F, 0F, 2F);
+        axesThickness = builder.getFloat("axes_thickness", 1F, 0.25F, 3F);
         uniformScale = builder.getBoolean("uniform_scale", false);
         clickSound = builder.getBoolean("click_sound", false);
         gizmos = builder.getBoolean("gizmos", true);
@@ -233,9 +239,11 @@ public class BBSSettings
         editorHorizontalFlight = builder.getBoolean("horizontal_flight", false);
         builder.register(editorLayoutSettings = new ValueEditorLayout("layout"));
         builder.register(editorOnionSkin = new ValueOnionSkin("onion_skin"));
+        builder.register(editorMotionPath = new ValueMotionPath("motion_path"));
         editorSnapToMarkers = builder.getBoolean("snap_to_markers", false);
         editorClipPreview = builder.getBoolean("clip_preview", true);
         editorRewind = builder.getBoolean("rewind", true);
+        editorSwapBoneMouseButtons = builder.getBoolean("swap_bone_mouse_buttons", false);
         editorHorizontalClipEditor = builder.getBoolean("horizontal_clip_editor", true);
         editorMinutesBackup = builder.getBoolean("minutes_backup", true);
         editorPreviewAutoSize = builder.getBoolean("preview_auto_size", true);
